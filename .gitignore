@@ -1,0 +1,20 @@
+# Environnement virtuel
+dbt-env/
+
+# Logs DBT
+logs/
+
+# Cache DBT
+dbt_modules/
+dbt_packages/
+target/
+
+# Python
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# DBT config (⚠️ très important)
+.dbt/
