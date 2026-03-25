@@ -2,10 +2,26 @@ version: 2
 
 models:
   - name: stg_orders
+    description: Order data with basic cleaning and transformation applied.
     columns:
+      - name: orders_id
+        description: ID de la commande
       - name: customer_id
+        description: ID du client
         tests:
           - not_null
           - relationships:
               to: ref('stg_customers')
               field: customer_id
+      - name: store_id
+        description: "{{ doc('store_id_description') }}"
+        tests:
+          - not_null
+      - name: orders_date
+        description: Date de la commande
+      - name: subtotal
+        description: Sous total de la commande hors taxe
+      - name: tax_paid
+        description: Taxe sur la commande
+      - name: order_total
+        description: Total TTC
